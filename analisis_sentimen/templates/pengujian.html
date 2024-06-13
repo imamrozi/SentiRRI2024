@@ -1,0 +1,214 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="page-inner">
+      <div class="page-header">
+        <h3 class="fw-bold mb-3">Daftar Data Pengujian</h3>
+        <ul class="breadcrumbs mb-3">
+          <li class="nav-home">
+            <a href="{% url 'sentimen:dashboard' %}">
+              <i class="icon-home"></i>
+            </a>
+          </li>
+          <li class="separator">
+            <i class="icon-arrow-right"></i>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'sentimen:pengujian' %}">Pengujian</a>
+          </li>
+        </ul>
+      </div>
+      <div class="row">
+
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <div class="d-flex align-items-center justify-content-between w-100">
+                <h4 class="card-title">Tabel Daftar Data Pengujian</h4>
+                <!-- <div class="d-flex">
+                    <button class="btn btn-primary btn-round ms-auto" data-bs-toggle="modal" data-bs-target="#addRowModal">
+                        <i class="fa fa-plus"></i>
+                        Tambah Data
+                      </button>
+                      <a class="btn btn-warning btn-round ms-auto" href="#"><i class="fa fa-search"></i> Normalisasi</a>
+                </div> -->
+              </div>
+            </div>
+            <div class="card-body">
+              <!-- Modal -->
+              <!-- <div
+                class="modal fade"
+                id="addRowModal"
+                tabindex="-1"
+                role="dialog"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header border-0">
+                      <h5 class="modal-title">
+                        <span class="fw-mediumbold"> New</span>
+                        <span class="fw-light"> Row </span>
+                      </h5>
+                      <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                      >
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <p class="small">
+                        Create a new row using this form, make sure you
+                        fill them all
+                      </p>
+                      <form>
+                        <div class="row">
+                          <div class="col-sm-12">
+                            <div class="form-group form-group-default">
+                              <label>ID</label>
+                              <input
+                                id="addid"
+                                type="text"
+                                class="form-control"
+                                placeholder="Id"
+                              />
+                            </div>
+                          </div>
+                          <div class="col-md-12 pe-0">
+                            <div class="form-group form-group-default">
+                              <label>Text & Aspek</label>
+                              <input
+                                id="text_aspek"
+                                type="text"
+                                class="form-control"
+                                placeholder="Text & Aspek"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer border-0">
+                      <button
+                        type="button"
+                        id="addRowButton"
+                        class="btn btn-primary"
+                      >
+                        Tambah
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-danger"
+                        data-dismiss="modal"
+                      >
+                        Kembali
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+
+              <div class="table-responsive">
+                <table
+                  id="add-row"
+                  class="display table table-striped table-hover"
+                >
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Text & Aspek</th>
+                      <th style="width: 10%">Aksi</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Dukungan dari RRI sebagai pelaksana Bintang Radio Indonesia memberikan landasan yang kuat bagi Josh untuk terus mengembangkan bakatnya dan memberikan kontribusi positif dalam dunia musik Indonesiaa
+                          <br>
+                          <br>
+                        Label Sentimen : <b>Positif</b>
+                        <br>
+                        Label Aspek : <b>["sarana_prasarana","program"] </b>
+                    </td>
+                      <td>
+                        <div class="form-button-action">
+                          <button
+                            type="button"
+                            data-bs-toggle="tooltip"
+                            title=""
+                            class="btn btn-link btn-warning btn-lg"
+                            data-original-title="Edit Task"
+                          >
+                            <i class="fa fa-edit"></i>
+                          </button>
+                          <button
+                            type="button"
+                            data-bs-toggle="tooltip"
+                            title=""
+                            class="btn btn-link btn-danger"
+                            data-original-title="Remove"
+                          >
+                            <i class="fa fa-trash"></i>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>
+                        RRI tidak hanya mencari penyanyi berbakat, tetapi juga memberikan kesempatan untuk berkembang dan membangun karier di industri musik. #DanTerjadiLagiJosh
+
+                        Label Sentimen : <b>positif</b>
+                        Label Aspek : <b>["layanan","sarana_prasarana"] </b>
+                      </td>
+                      <td>
+                        <div class="form-button-action">
+                          <button
+                            type="button"
+                            data-bs-toggle="tooltip"
+                            title=""
+                            class="btn btn-link btn-warning btn-lg"
+                            data-original-title="Edit Task"
+                          >
+                            <i class="fa fa-edit"></i>
+                          </button>
+                          <button
+                            type="button"
+                            data-bs-toggle="tooltip"
+                            title=""
+                            class="btn btn-link btn-danger"
+                            data-original-title="Remove"
+                          >
+                            <i class="fa fa-trash"></i>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
+
+{% block scripts %}
+<script>
+    $(document).ready(function () {
+      $("#basic-datatables").DataTable({});
+
+      $("#add-row").DataTable({
+        pageLength: 5,
+      });
+    });
+</script>
+{% endblock scripts %}
+    
